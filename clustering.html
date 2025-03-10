@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mind Map - Clustering</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 2rem;
+      color: #444;
+    }
+
+    .mind-map {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      padding: 20px;
+      gap: 40px;
+    }
+
+    /* Cluster styling */
+    .cluster {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      width: 250px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+    }
+
+    .cluster-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: left;
+      color: #333;
+      margin: 0;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 10px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cluster-title::before {
+      content: "📂"; /* Icon for cluster */
+      font-size: 1.5rem;
+    }
+
+    /* Sub-node (sub-category) styling */
+    .sub-node {
+      font-size: 0.9rem;
+      padding: 8px 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin: 5px 0;
+      cursor: pointer;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .sub-node:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .sub-node::before {
+      content: "📑"; /* Icon for sub-category */
+      font-size: 1.2rem;
+    }
+
+    /* Colors for sub-categories */
+    .sub-node.color-blue {
+      background-color: #e6f0ff;
+      border-color: #99ccff;
+    }
+
+    .sub-node.color-green {
+      background-color: #e6ffe6;
+      border-color: #99cc99;
+    }
+
+    .sub-node.color-orange {
+      background-color: #fff4e6;
+      border-color: #ffcc99;
+    }
+
+    .sub-node.color-purple {
+      background-color: #f3e6ff;
+      border-color: #cc99ff;
+    }
+
+    .sub-node.color-red {
+      background-color: #ffe6e6;
+      border-color: #ff9999;
+    }
+
+    /* Keywords display styling */
+    .keywords {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      text-align: left;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #444;
+    }
+
+    .keywords.active {
+      display: block;
+    }
+
+    .keywords::before {
+      content: "💡"; /* Icon for keywords */
+      font-size: 1.5rem;
+      color: #444;
+      margin-right: 8px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .mind-map {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .cluster {
+        width: 100%;
+        align-items: flex-start;
+      }
+
+      .cluster-title {
+        font-size: 1rem;
+      }
+
+      .sub-node {
+        font-size: 0.8rem;
+        padding: 5px 8px;
+      }
+
+      .keywords {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Mind Map - Clustering</h1>
+  <div class="mind-map">
+
+    <!-- Cluster 0 -->
+    <div class="cluster">
+      <div class="cluster-title">0 - Fenêtre PVC</div>
+      <div class="sub-node color-blue" data-keywords="prix fenêtre pvc couleur, prix fenêtre pvc imitation bois, prix fenêtre pvc double vitrage oscillo battant, prix fenêtre pvc oscillo-battant, fenêtre pvc sur mesure pas cher, prix fenêtre pvc pas cher, prix fenêtre pvc pose comprise, prix fenêtre pvc rénovation, achat fenêtre pvc, acheter fenêtre pvc, destockage fenêtre pvc, devis fenêtre pvc, devis fenêtre pvc en ligne, devis fenêtre pvc sur mesure, fenêtre pvc alu prix, fenêtre pvc direct usine, fenêtre pvc discount, fenêtre pvc double vitrage prix, fenêtre pvc en ligne, fenêtre pvc en stock, fenêtre pvc pas cher, fenêtre pvc prix discount, fenêtre pvc prix usine, fenêtre pvc sur mesure direct usine, fenêtre pvc sur mesure prix, meilleur prix fenêtre pvc, meilleur qualité prix fenêtre pvc, meilleur qualité-prix fenêtre pvc, meilleur qualité/prix fenêtre pvc, prix changement fenêtre pvc, prix d'une fenêtre pvc, prix d'une fenêtre pvc double vitrage, prix d'une fenêtre pvc double vitrage posée, prix fenêtre pvc, prix fenêtre pvc double vitrage, prix fenêtre pvc double vitrage sur mesure, prix fenêtre pvc sur mesure, prix fenêtre pvc triple vitrage, prix moyen fenêtre pvc, prix moyen fenêtre pvc double vitrage, prix remplacement fenêtre pvc, promo fenêtre pvc, remplacement fenêtre pvc prix, solde fenêtre pvc, tarif fenêtre pvc, vente fenêtre pvc, destockage fenêtre pvc pas cher, devis fenêtre pvc pas cher,fenêtre pvc avec moustiquaire intégrée prix, fenêtre pvc petit carreaux prix, fenêtre pvc triangle prix, fenêtre pvc triple vitrage prix">
+        0.1 - Prix
+      </div>
+      <div class="sub-node color-green" data-keywords="fenêtre pvc oscillo-battant 1 vantail, fenêtre pvc 1 vantail abattant, fenêtre pvc 1 vantail oscillo battant, fenêtre pvc 1 vantail sur mesure, fenêtre pvc 1 vantail, fenêtre pvc 1 vantail oscillo-battant, fenêtre pvc blanc 1 vantail,fenêtre pvc oscillo battant 2 vantaux, fenêtre pvc oscillo-battant 2 vantaux, réglage fenêtre pvc 2 vantaux, double fenêtre pvc, fenêtre pvc 2 vantaux, fenêtre pvc 2 vantaux oscillo-battant, fenêtre pvc blanc 2 vantaux, fenêtre pvc coulissante 2 vantaux, prix fenêtre pvc double vitrage 2 vantaux,fenêtre pvc 3 vantaux pas cher, fenêtre pvc 3 vantaux sur mesure, fenêtre pvc 3 vantaux, fenêtre pvc 3 vantaux oscillo battant,fenêtre pvc oscillo battant sur mesure, fenêtre pvc oscillo-battant 75x120, fenêtre pvc oscillo-battant 75x60, fenêtre pvc oscillo-battant 95x60, fenêtre pvc double vitrage oscillo-battant, fenêtre pvc oscillo-battant">
+        0.2 - Types de vantaux
+      </div>
+      <div class="sub-node color-orange" data-keywords="fenêtre pvc gris anthracite pas cher, fenêtre pvc bicolore prix, fenêtre pvc chêne doré prix, fenêtre pvc couleur bois prix, fenêtre pvc couleur prix, fenêtre pvc gris anthracite prix, fenêtre pvc imitation bois prix, fenêtre pvc imitation bois tarif, fenêtre pvc noir plus cher que blanc, fenêtre pvc noir prix, couleur fenêtre pvc, fenêtre pvc 2 couleurs, fenêtre pvc anthracite, fenêtre pvc beige, fenêtre pvc bicolore, fenêtre pvc blanc, fenêtre pvc blanc double vitrage, fenêtre pvc blanche, fenêtre pvc chêne doré, fenêtre pvc couleur, fenêtre pvc couleur beige, fenêtre pvc couleur bois, fenêtre pvc couleur chêne doré, fenêtre pvc couleur gris anthracite, fenêtre pvc gris, fenêtre pvc gris anthracite, fenêtre pvc gris anthracite avis, fenêtre pvc gris anthracite intérieur, fenêtre pvc gris anthracite rénovation, fenêtre pvc gris clair, fenêtre pvc gris clair 7035, fenêtre pvc grise, fenêtre pvc imitation bois, fenêtre pvc imitation bois avis, fenêtre pvc laqué, fenêtre pvc noir, fenêtre pvc noir avis, fenêtre pvc noir intérieur, fenêtre pvc noire, fenêtre pvc opaque, fenêtre pvc ral 7016, fenêtre pvc ral 7016 avis, fenêtre pvc teinté dans la masse, nuancier couleur fenêtre pvc">
+        0.3 - Couleurs
+      </div>
+      <div class="sub-node color-yellow" data-keywords="fenêtre pvc standard dimension, espagnolette fenêtre pvc, fenêtre pvc alu, fenêtre pvc avec croisillons, fenêtre pvc avec croisillons blanc, fenêtre pvc avec moustiquaire, fenêtre pvc cintrée, fenêtre pvc cintrée sur mesure, fenêtre pvc coulissante, fenêtre pvc double vitrage coulissante, fenêtre pvc double vitrage rénovation, fenêtre pvc double vitrage sur mesure, fenêtre pvc et alu, fenêtre pvc fixe, fenêtre pvc fixe sans ouverture, fenêtre pvc haut de gamme, fenêtre pvc haute isolation, fenêtre pvc isolante, fenêtre pvc monobloc, fenêtre pvc rénovation, fenêtre pvc rénovation prix, fenêtre pvc rénovation sur mesure, fenêtre pvc ronde, fenêtre pvc standard, fenêtre pvc triple vitrage, hublot fenêtre pvc, oeil de boeuf fenêtre pvc">
+        0.4 - Types fenêtres et options
+      </div>
+      <div class="sub-node color-red" data-keywords="fenêtre pvc 100x100 1 vantail, fenêtre pvc 60 x 120 2 vantaux, fenêtre pvc 3 vantaux 125x180, fenêtre pvc 40x40 oscillo-battant, fenêtre pvc 50x50 oscillo-battant, fenêtre pvc 60 x 40 oscillo-battant, petite fenêtre pvc pas cher, fenêtre pvc 100 x 80, fenêtre pvc 100x100, fenêtre pvc 100x60, fenêtre pvc 100x80, fenêtre pvc 120x100, fenêtre pvc 120x105, fenêtre pvc 120x120, fenêtre pvc 120x125, fenêtre pvc 120x60, fenêtre pvc 120x80, fenêtre pvc 120x90, fenêtre pvc 135x120, fenêtre pvc 135x140, fenêtre pvc 140x120, fenêtre pvc 140x140, fenêtre pvc 150x100, fenêtre pvc 30x30, fenêtre pvc 40x40, fenêtre pvc 40x60, fenêtre pvc 5 ou 6 chambres, fenêtre pvc 50 x 60, fenêtre pvc 50x50, fenêtre pvc 60 x 60, fenêtre pvc 60x60, fenêtre pvc 60x90, fenêtre pvc 7016, fenêtre pvc 75x120, fenêtre pvc 80, fenêtre pvc 80x105, fenêtre pvc 80x75, fenêtre pvc 80x80, fenêtre pvc 90x100, fenêtre pvc 90x120, fenêtre pvc 90x60, fenêtre pvc 90x90, fenêtre pvc 95x80, fenêtre pvc taille standard, petite fenêtre pvc, petite fenêtre pvc 20 x 30, petite fenêtre pvc 30 x 40, petite fenêtre pvc 30x30, petite fenêtre pvc 40x40, petite fenêtre pvc double vitrage">
+        0.5 - Tailles
+        </div>
+      <div class="sub-node color-purple" data-keywords="élargisseur fenêtre pvc, embrasement fenêtre pvc, encadrement fenêtre pvc, entrebâilleur fenêtre pvc sans percer, entrebailleur pour fenêtre pvc, entrée d'air fenêtre pvc, entrée d'air pour fenêtre pvc, entrée d'air universelle fenêtre pvc, cache paumelle fenêtre pvc oscillo battant, paumelle fenêtre pvc oscillo battant, poignée avec serrure pour fenêtre pvc, poignée de fenêtre pvc, verrou à onglet fenêtre pvc, verrou en applique fenêtre pvc, verrou fenêtre pvc, verrou plat fenêtre pvc, accessoire fenêtre pvc, aérateur de fenêtre pvc, aération dormant fenêtre pvc, aile de recouvrement fenêtre pvc, ajouter petit bois fenêtre pvc, anti fausse manoeuvre fenêtre pvc, appui de fenêtre pvc, appui de fenêtre pvc extérieur, appui de fenêtre pvc intérieur, appui de fenêtre pvc rénovation, arrêt fenêtre pvc, baguette couvre joint fenêtre pvc, baguette de recouvrement fenêtre pvc, baguette fenêtre pvc, baguette finition fenêtre pvc, battement central fenêtre pvc, battement fenêtre pvc, bavette fenêtre pvc, bavette rénovation fenêtre pvc, bloque fenêtre pvc, busette de drainage fenêtre pvc, busette fenêtre pvc, butée de fenêtre pvc, cache aération fenêtre pvc, cache charnière fenêtre pvc, cache fenêtre pvc, cache gond fenêtre pvc, cache paumelle fenêtre pvc, cache paumelle fenêtre pvc blanc, cache paumelle fenêtre pvc universelle, cache paumelle pour fenêtre pvc, cache trou fenêtre pvc, cache vis poignée fenêtre pvc, cadrage fenêtre pvc, cadre de fenêtre pvc, capuchon fenêtre pvc, charniere fenêtre pvc, charniere fenêtre pvc oscillo battant, chassis fenêtre pvc, clame de fixation fenêtre pvc, clameau fenêtre pvc, cornière fenêtre pvc, cornière habillage fenêtre pvc, couvre joint fenêtre pvc, couvre joint intérieur fenêtre pvc, crémone de fenêtre pvc, crémone fenêtre pvc oscillo battant, crémone gu fenêtre pvc, crémone pour fenêtre pvc, croisillon fenêtre pvc, croisillon fenêtre pvc à coller, croisillons rapportés fenêtre pvc, dormant fenêtre pvc, équerre fenêtre pvc, équerre fixation fenêtre pvc, finition fenêtre pvc, finition fenêtre pvc extérieur, finition fenêtre pvc intérieur, gâche blocage fenêtre pvc, gâche de galet fenêtre pvc, gâche fenêtre pvc, gâche fenêtre pvc oscillo battant, gond de fenêtre pvc, gond fenêtre pvc, grille de ventilation fenêtre pvc, grille ventilation fenêtre pvc, habillage fenêtre pvc, habillage fenêtre pvc extérieur, habillage fenêtre pvc intérieur, habillage tableau fenêtre pvc, houssette de maintien fenêtre pvc, houssette semi-fixe pour fenêtre pvc, imposte fenêtre pvc, joint caoutchouc pour fenêtre pvc, joint d'étanchéité pour fenêtre pvc, joint de fenêtre pvc, joint de fenêtre pvc détérioré, joint de frappe fenêtre pvc, joint dormant fenêtre pvc, joint étanchéité fenêtre pvc, joint fenêtre pvc à insérer, joint fenêtre pvc a insérer gris, joint fenêtre pvc blanc, joint fenêtre pvc double vitrage, joint fenêtre pvc rainure, joint fenêtre pvc rainure 3 mm, joint fenêtre pvc rainure 4mm, joint fenêtre pvc rainure gris, joint fenêtre pvc silicone, joint isolation fenêtre pvc, joint pour fenêtre pvc, joint pour fenêtre pvc double vitrage, kit de fixation fenêtre pvc en applique, kit fixation fenêtre pvc, kit fixation fenêtre pvc en applique, kit oscillo battant pour fenêtre pvc, kit oscillo-battant fenêtre pvc, kit oscillo-battant pour fenêtre pvc, loquet pour fenêtre pvc, loqueteau fenêtre pvc, mécanisme fermeture fenêtre pvc, mécanisme oscillo battant pour fenêtre pvc, moustiquaire fenêtre pvc, obturateur fenêtre pvc, parclose fenêtre pvc, pare tempête fenêtre pvc, pare-tempête fenêtre pvc, patte de fixation fenêtre pvc, patte de scellement fenêtre pvc, patte fixation fenêtre pvc en applique, paumelle fenêtre pvc, paumelle fenêtre pvc oscillo-battant, paumelle pour fenêtre pvc, paumelles fenêtre pvc, petit bois amovible pour fenêtre pvc, petit bois fenêtre pvc, petit bois fenêtre pvc à coller, pièce detachee fenêtre pvc oscillo-battant, pièces d'appui pour fenêtre pvc, pièces détachées pour fenêtre pvc, pièces fenêtre pvc, plat pour fenêtre pvc, plaxage fenêtre pvc, poignée entrebailleur fenêtre pvc, poignée fenêtre pvc, poignée pour fenêtre pvc, prix plaxage fenêtre pvc, profil fenêtre pvc, profil fenêtre pvc rénovation, profilé de recouvrement fenêtre pvc, profilé fenêtre pvc, quincaillerie fenêtre pvc, quincaillerie fixation fenêtre pvc, quincaillerie pour fenêtre pvc, serrure fenêtre pvc, support d'angle pour mécanisme oscillo battant fenêtre pvc, tablette fenêtre pvc, tablier fenêtre pvc, tapée fenêtre pvc, ventilation fenêtre pvc, vis de réglage fenêtre pvc, vis fenêtre pvc, vis fixation fenêtre pvc, habillage extérieur fenêtre pvc rénovation">
+        0.6 - Accessoires
+      </div>
+    </div>
+
+    <!-- Cluster 1 -->
+    <div class="cluster">
+      <div class="cluster-title">1 - Porte Fenêtre PVC</div>
+      <div class="sub-node color-blue" data-keywords="devis porte fenêtre pvc, porte fenêtre pvc pas cher, prix porte fenêtre pvc pose comprise, prix porte fenêtre pvc, porte fenêtre pvc prix usine, porte fenêtre pvc en stock, prix porte fenêtre pvc double vitrage sur mesure, prix porte fenêtre pvc sur mesure, achat porte fenêtre pvc, porte fenêtre pvc prix, prix porte fenêtre pvc double vitrage, prix porte-fenêtre pvc, prix porte-fenêtre pvc double vitrage, prix porte-fenêtre pvc double vitrage sur mesure, prix porte-fenêtre pvc sur mesure, tarif porte fenêtre pvc, prix porte fenêtre pvc rénovation, prix pose porte fenêtre pvc rénovation, prix porte-fenêtre pvc rénovation, prix porte fenêtre pvc 1 vantail, prix porte-fenêtre pvc 1 vantail,prix porte fenêtre pvc double vitrage 2 vantaux, prix porte-fenêtre pvc double vitrage 2 vantaux,prix pose porte-fenêtre pvc rénovation">
+        1.1 - Prix
+      </div>
+      <div class="sub-node color-green" data-keywords="porte fenêtre pvc 1 vantail à clé, porte fenêtre pvc 1 vantail avec serrure, porte-fenêtre pvc 1 vantail 215x100, porte fenêtre pvc 1 vantail, porte-fenêtre pvc 1 vantail, porte-fenêtre pvc 1 vantail avec serrure, porte fenêtre pvc 2 vantaux sur mesure, double porte fenêtre pvc, porte fenêtre pvc 2 vantaux, porte-fenêtre pvc 2 vantaux prix, porte-fenêtre pvc 2 vantaux sur mesure, porte fenêtre pvc 2 vantaux rénovation,prix porte fenêtre pvc double vitrage 3 vantaux, prix porte-fenêtre pvc double vitrage 3 vantaux, porte fenêtre pvc 3 vantaux, porte-fenêtre pvc 3 vantaux">
+        1.2 - Types de vantaux
+      </div>
+      <div class="sub-node color-orange" data-keywords="porte fenêtre pvc blanc, porte fenêtre pvc chêne doré, porte fenêtre pvc gris, porte fenêtre pvc gris anthracite, porte fenêtre pvc imitation bois, porte fenêtre pvc noir, porte-fenêtre pvc beige, porte-fenêtre pvc blanc, porte-fenêtre pvc chêne doré, porte-fenêtre pvc gris anthracite, porte-fenêtre pvc imitation bois, porte-fenêtre pvc noir, porte fenêtre pvc anthracite">
+        1.3 - Couleurs
+      </div>
+      <div class="sub-node color-yellow" data-keywords="porte fenêtre pvc coulissante, porte-fenêtre pvc coulissante, porte-fenêtre pvc double vitrage">
+        1.4 - Type
+      </div>
+      <div class="sub-node color-red" data-keywords="porte fenêtre pvc sur mesure, porte-fenêtre pvc 2 vantaux 215x120, porte-fenêtre pvc 2 vantaux 215x160, porte-fenêtre pvc sur mesure, porte fenêtre pvc 120x215, porte fenêtre pvc 140, porte-fenêtre pvc 120x215, porte-fenêtre pvc 140, porte-fenêtre pvc dimensions standard, porte-fenêtre pvc standard,porte fenêtre pvc 2 vantaux 180x215, porte fenêtre pvc 2 vantaux 215x120, porte fenêtre pvc 2 vantaux 215x160">
+        1.5 - Taille
+      </div>
+      <div class="sub-node color-purple" data-keywords="crémone porte fenêtre pvc 2 points, poignée de porte fenêtre pvc, poignée porte fenêtre pvc, poignée porte fenêtre pvc avec serrure, poignée porte fenêtre pvc extra plate, verrou à levier porte fenêtre pvc, verrou à levier porte-fenêtre pvc, verrou porte fenêtre pvc, accessoire porte fenêtre pvc, aimant porte fenêtre pvc, aimant pour porte fenêtre pvc, ajouter poignée extérieure porte fenêtre pvc, bloque porte fenêtre pvc, châssis porte fenêtre pvc, chatière porte fenêtre pvc, crémone à barillet pour porte fenêtre pvc, crémone ferco 5.28 porte fenêtre pvc, crémone ferco pour porte fenêtre pvc, crémone porte fenêtre pvc, crémone porte fenêtre pvc 4 points, crémone porte-fenêtre pvc, gâche loquet porte fenêtre pvc, gâche porte fenêtre pvc, houssette de blocage porte fenêtre pvc, houssette de maintien porte fenêtre pvc, houssette de maintien pour fenêtre et porte fenêtre pvc, houssette porte fenêtre pvc, joint de porte fenêtre pvc, joint porte fenêtre pvc, loquet porte fenêtre pvc, loqueteau porte fenêtre pvc, paumelle porte fenêtre pvc, pièce détachée porte fenêtre pvc, plat pour fenêtre et porte fenêtre pvc, poignée de porte-fenêtre pvc, poignée de tirage porte fenêtre pvc, poignée porte-fenêtre pvc, poignée porte-fenêtre pvc avec serrure, poignée porte-fenêtre pvc extra plate, serrure porte fenêtre pvc">
+        1.6 - Accessoires
+      </div>
+    </div>
+
+    <!-- Cluster 2 -->
+    <div class="cluster">
+      <div class="cluster-title">2 - Fenêtre PVC avec volet roulant</div>
+      <div class="sub-node color-blue" data-keywords="prix pose fenêtre pvc avec volet roulant, destockage fenêtre pvc avec volet roulant, fenêtre pvc avec volet roulant pas cher, fenêtre pvc avec volet roulant prix, prix fenêtre pvc avec volet roulant intégré électrique, prix fenêtre pvc double vitrage avec volet roulant, prix fenêtre pvc double vitrage avec volet roulant avec pose, prix fenêtre pvc double vitrage avec volet roulant électrique, prix fenêtre pvc double vitrage avec volet roulant rénovation, prix fenêtre pvc triple vitrage avec volet roulant, prix fenêtre pvc avec volet roulant">
+        2.1 - Prix
+      </div>
+      <div class="sub-node color-green" data-keywords="fenêtre pvc avec volet roulant sur mesure, fenêtre pvc 115x80 avec volet roulant, fenêtre pvc 120x120 avec volet roulant, fenêtre pvc 120x145 avec volet roulant, fenêtre pvc 125x100 avec volet roulant, fenêtre pvc 135x120 avec volet roulant, fenêtre pvc 135x140 avec volet roulant, fenêtre pvc 140x120 avec volet roulant, fenêtre pvc 140x140 avec volet, fenêtre pvc 75x120 avec volet roulant, fenêtre pvc 95x120 avec volet roulant, fenêtre pvc avec volet roulant 120x135, fenêtre pvc avec volet roulant 140x140">
+        2.2 - Taille
+      </div>
+      <div class="sub-node color-orange" data-keywords="fenêtre pvc 1 vantail avec volet roulant, porte-fenêtre pvc 1 vantail avec volet roulant,porte-fenêtre pvc 2 vantaux avec volet roulant,fenêtre pvc 3 vantaux avec volet roulant prix, fenêtre pvc 3 vantaux avec volet roulant,fenêtre pvc oscillo battant 1 vantail avec volet roulant, fenêtre pvc oscillo-battant 1 vantail avec volet roulant, fenêtre pvc oscillo battant 2 vantail avec volet roulant, fenêtre pvc oscillo-battant 2 vantail avec volet roulant">
+        2.3 - Types de vantaux
+      </div>
+      <div class="sub-node color-yellow" data-keywords="fenêtre pvc anthracite avec volet roulant, fenêtre pvc gris anthracite avec volet roulant, fenêtre pvc ral 7016 avec volet roulant">
+        2.4 - Couleur
+      </div>
+    </div>
+
+    <!-- Cluster 3 -->
+    <div class="cluster">
+      <div class="cluster-title">3 - Porte Fenêtre PVC avec volet roulant</div>
+      <div class="sub-node color-blue" data-keywords="prix porte fenêtre pvc double vitrage avec volet roulant, prix porte-fenêtre pvc double vitrage avec volet roulant, porte-fenêtre pvc avec volet roulant pas cher, porte fenêtre pvc avec volet roulant pas cher, prix d'une porte-fenêtre pvc avec volet roulant, prix porte fenêtre pvc avec volet roulant, prix porte fenêtre pvc avec volet roulant intégré électrique, prix porte-fenêtre pvc avec volet roulant, prix porte-fenêtre pvc avec volet roulant intégré électrique">
+        3.1 - Prix
+      </div>
+      <div class="sub-node color-green" data-keywords="Porte fenêtre PVC 2 vantaux avec volet roulant, Porte fenêtre PVC 1 vantail avec volet roulant">
+        3.2 - Types de vantaux
+      </div>
+      <div class="sub-node color-orange" data-keywords="porte fenêtre pvc avec volet roulant 90x215, porte-fenêtre pvc avec volet roulant 215x140">
+        3.3 - Taille
+      </div>
+    </div>
+
+    <!-- Cluster 4 -->
+    <div class="cluster">
+      <div class="cluster-title">4 - Brand Content</div>
+      <div class="sub-node color-blue" data-keywords="fabricant fenêtre pvc, avis fenêtre pvc, comparatif fenêtre pvc, délai livraison fenêtre pvc, entreprise de fenêtre pvc, fabricant de fenêtre pvc sur mesure, fabricant fenêtre pvc france, fabricant fenêtre pvc pour particulier, fabrication fenêtre pvc, fabrication fenêtre pvc sur mesure, fenêtre pvc avis, fenêtre pvc couleur avis, fenêtre pvc france, fenêtre pvc nord, fenêtre pvc qualité, fourniture et pose fenêtre pvc, garantie fenêtre pvc, installateur fenêtre pvc, magasin fenêtre pvc, marque de fenêtre pvc, meilleur fenêtre pvc, menuiserie fenêtre pvc, norme fenêtre pvc, où commander fenêtre pvc ?, porte et fenêtre pvc, quelle est la meilleure marque de fenêtre pvc, quelle marque de fenêtre pvc choisir, type de fenêtre pvc, usine de fabrication de fenêtre pvc, entreprise pose de fenêtre pvc">
+        4.1 - Fenêtre
+      </div>
+      <div class="sub-node color-green" data-keywords="fabricant porte fenêtre pvc">
+        4.2 - Porte fenêtre
+      </div>
+    </div>
+
+    <!-- Cluster 5 -->
+    <div class="cluster">
+      <div class="cluster-title">5 - Articles blog : tuto, pose, réglages</div>
+      <div class="sub-node color-purple" data-keywords="pose porte fenêtre pvc en applique rénovation, comment poser une porte fenêtre pvc en rénovation, comment poser une porte-fenêtre pvc en rénovation, changer crémone fenêtre pvc, changer crémone fenêtre pvc oscillo battant, changer double vitrage fenêtre pvc, changer fenêtre pvc, changer joint fenêtre pvc, changer joint fenêtre pvc rainure, changer joint isolation fenêtre pvc, changer joint ouvrant fenêtre pvc, changer paumelle fenêtre pvc, changer poignée fenêtre pvc, changer une fenêtre pvc, changer vantail fenêtre pvc, changer vitrage fenêtre pvc, changer vitre fenêtre pvc, pose aérateur fenêtre pvc, pose aération fenêtre pvc, pose aile de recouvrement fenêtre pvc, pose appui de fenêtre pvc, pose d'une fenêtre pvc en rénovation, pose de fenêtre pvc, pose fenêtre pvc, pose fenêtre pvc en applique, pose fenêtre pvc en applique rénovation, pose fenêtre pvc en feuillure, pose fenêtre pvc en rénovation, pose fenêtre pvc en tunnel, pose fenêtre pvc en tunnel sur ossature bois, pose fenêtre pvc encastrable, pose fenêtre pvc rénovation, pose fenêtre pvc sur ossature bois, pose fenêtre pvc, en tunnel sur ossature bois, pose grille aération fenêtre pvc, pose tapée isolation fenêtre pvc, poser un élargisseur de fenêtre pvc, poser un entrebâilleur de fenêtre pvc, poser une fenêtre pvc, poser une fenêtre pvc en applique, poser une fenêtre pvc en rénovation, poser une fenêtre pvc en tunnel, poser une fenêtre pvc sur ossature bois, poseur de fenêtre pvc, poseur fenêtre pvc, sécurité fenêtre pvc, sécurité fenêtre pvc bébé, sécurité fenêtre pvc sans percer, système fermeture fenêtre pvc, installation d'une fenêtre pvc en rénovation, installation de fenêtre pvc, installation fenêtre pvc, installer aération fenêtre pvc, poignée fenêtre pvc cassée, poignée fenêtre pvc ne ferme plus, poignée fenêtre pvc oscillo battant, poignée fenêtre pvc oscillo-battant, réglage compression fenêtre pvc, réglage compression fenêtre pvc oscillo-battant, réglage crémone fenêtre pvc, réglage fenêtre pvc, réglage fenêtre pvc air qui passe, réglage fenêtre pvc hiver, réglage fenêtre pvc hiver été, réglage fenêtre pvc oscillo-battant, réglage fenêtre pvc qui ferme mal, réglage fenêtre pvc qui frotte en bas, réglage fermeture fenêtre pvc, réglage galet champignon fenêtre pvc, réglage paumelle fenêtre pvc, réglage poignée fenêtre pvc, régler fenêtre pvc, comment régler une fenêtre pvc, comment régler une fenêtre pvc oscillo-battant, comment régler une fenêtre pvc qui ferme mal, fenêtre pvc bloquée, fenêtre pvc bloquée en bas, fenêtre pvc bloquée fermée, fenêtre pvc bloquée ouverte, fenêtre pvc et chaleur, réglage de fenêtre pvc, dimensions fenêtre pvc, air qui passe fenêtre pvc, artisan fenêtre pvc, avantage fenêtre pvc, blocage fenêtre pvc, cadre fenêtre pvc cassé, calfeutrage fenêtre pvc, champlat fenêtre pvc, charnière fenêtre pvc cassée, colle pour réparer fenêtre pvc, comment changer couleur fenêtre pvc, comment débloquer une fenêtre pvc, comment dégonder une fenêtre pvc, comment degonder une fenêtre pvc oscillo-battant, comment démonter aération fenêtre pvc, comment démonter une fenêtre pvc, comment démonter une fenêtre pvc oscillo battant, comment démonter une poignée de fenêtre pvc, comment enlever rayure sur fenêtre pvc, comment fixer moustiquaire fenêtre pvc, comment fixer une fenêtre pvc, comment installer une fenêtre pvc, comment nettoyer fenêtre pvc, comment ouvrir fenêtre pvc crémone cassée, comment poser une fenêtre pvc, comment poser une fenêtre pvc en rénovation, comment reconnaître une fenêtre pvc de qualité, composition d'une fenêtre pvc, condensation fenêtre pvc, coupe fenêtre pvc, crémone fenêtre pvc bloquée, crémone fenêtre pvc cassée, dégonder une fenêtre pvc, démontage poignée fenêtre pvc, démonter cadre fenêtre pvc, démonter fenêtre pvc, démonter une fenêtre pvc, dépose totale fenêtre pvc, durée de vie fenêtre pvc, enlever grille aération fenêtre pvc, entretien fenêtre pvc, entretien mécanisme fenêtre pvc, épaisseur dormant fenêtre pvc, étanchéité fenêtre pvc, évacuation eau fenêtre pvc, fenêtre pvc alu comparaison, fenêtre pvc bâtiment de france, fenêtre pvc ou alu, fenêtre pvc ou alu bord de mer, fenêtre pvc ou alu gris anthracite, fenêtre pvc ou alu ou bois, fenêtre pvc ou aluminium, fenêtre pvc ou aluminium que choisir, fenêtre pvc ou bois, fenêtre pvc rupture pont thermique, fenêtre pvc sans ouverture, fenêtre pvc, alu comparatif, fenêtre pvc, bois, fermeture de fenêtre pvc, fixation fenêtre pvc, fixation fenêtre pvc en applique, fixation fenêtre pvc en tunnel, grille aération fenêtre pvc obligatoire, grille d'aération pour fenêtre pvc, isolation phonique fenêtre pvc, moisissure joint fenêtre pvc, nettoyer fenêtre pvc, nettoyer fenêtre pvc avec vinaigre blanc, nettoyer fenêtre pvc blanc, nettoyer fenêtre pvc jauni, nettoyer fenêtre pvc jaunie, nettoyer fenêtre pvc savon noir, nettoyer fenêtre pvc white spirit, quand changer fenêtre pvc, quel joint pour fenêtre pvc, quelle colle utiliser sur fenêtre pvc, rénover fenêtre pvc, réparation crémone fenêtre pvc, réparation de fenêtre pvc, réparer mécanisme fermeture fenêtre pvc, sécurité pour fenêtre pvc, soubassement fenêtre pvc, fenêtre pvc alu comparatif">
+        5.1 - Pose, réglages, entretien et comparatif
+      </div>
+      <div class="sub-node color-red" data-keywords="Prix fenêtre PVC avec pose, Différence prix fenêtre PVC blanc et couleur,tarif pose fenêtre pvc, tarif pose fenêtre pvc rénovation, coût fenêtre pvc, changer vitre fenêtre pvc prix, différence de prix entre fenêtre pvc blanc et couleur, différence de prix entre fenêtre pvc et alu, fenêtre pvc ou alu prix, fenêtre pvc ou bois prix, fenêtre pvc prix avec pose, pose fenêtre pvc prix, prime pour fenêtre pvc, prix fenêtre pvc avec pose, prix fenêtre pvc double vitrage avec pose, prix pose aération fenêtre pvc, prix pose fenêtre pvc, prix pose fenêtre pvc double vitrage, prix pose fenêtre pvc rénovation, prix pose grille aération fenêtre pvc, quel est le prix d une fenêtre pvc">
+        5.2 - Prix
+      </div>
+      <div class="sub-node color-blue" data-keywords="Sécurité fenêtre PVC, Système de fermeture fenêtre PVC">
+        5.3 - Sécurité
+      </div>
+      <div class="sub-node color-orange" data-keywords="porte fenêtre, poser une porte-fenêtre pvc en rénovation, pose porte fenêtre pvc en tunnel, comment poser une porte fenêtre pvc, comment poser une porte-fenêtre pvc, fixation porte fenêtre pvc, pose porte fenêtre pvc, pose porte-fenêtre pvc, prix porte-fenêtre pvc avec pose, prix porte fenêtre pvc avec pose, prix porte-fenêtre pvc double vitrage avec pose, prix pose porte fenêtre pvc, prix pose porte-fenêtre pvc, réglage porte fenêtre pvc oscillo battant, réglage porte-fenêtre pvc oscillo battant, réglage serrure porte fenêtre pvc, porte fenêtre pvc bloquée en bas, porte fenêtre pvc bloquée fermée, porte fenêtre pvc ne ferme plus, porte fenêtre pvc qui grince, réglage compression porte fenêtre pvc, réglage fermeture porte fenêtre pvc, réglage fermeture porte-fenêtre pvc, réglage galet porte fenêtre pvc, réglage porte fenêtre pvc 5 points, réglage porte fenêtre pvc air qui passe, réglage porte fenêtre pvc qui frotte au milieu, réglage porte fenêtre pvc qui frotte en bas, réglage porte-fenêtre pvc, réglage porte-fenêtre pvc 5 points, régler porte fenêtre pvc, régler porte-fenêtre pvc, régler une porte fenêtre pvc, changer poignée porte fenêtre pvc, changer serrure porte fenêtre pvc, crémone porte fenêtre pvc cassée, fermeture extérieure porte fenêtre pvc, fermeture porte fenêtre pvc, mettre une serrure sur une porte fenêtre pvc, sécuriser porte fenêtre pvc, sécurité porte fenêtre pvc, système de fermeture porte fenêtre pvc, changer serrure porte-fenêtre pvc, problème fermeture porte fenêtre pvc, changer crémone porte-fenêtre pvc, comment dégonder une porte fenêtre pvc, crémone porte-fenêtre pvc cassée, dégonder porte fenêtre pvc, démonter porte fenêtre pvc, démonter soubassement porte fenêtre pvc, porte fenêtre pvc qui frotte en bas, porte fenêtre pvc voilée">
+        5.4 - Porte fenêtre
+      </div>
+    </div>
+
+    <!-- Keywords Display -->
+    <div id="keywords-display" class="keywords">
+      Cliquez sur une sous-catégorie pour voir les mots-clés associés.
+    </div>
+  </div>
+
+  <script>
+    // Script pour afficher les mots-clés associés
+    const subNodes = document.querySelectorAll('.sub-node');
+    const keywordsDisplay = document.getElementById('keywords-display');
+
+    subNodes.forEach((subNode) => {
+      subNode.addEventListener('click', () => {
+        // Récupère les mots-clés associés à la sous-catégorie
+        const keywords = subNode.dataset.keywords;
+        keywordsDisplay.textContent = keywords || 'Aucun mot-clé disponible.';
+        keywordsDisplay.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
