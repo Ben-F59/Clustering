@@ -173,6 +173,19 @@
                 background-color: #ccc;
                 cursor: not-allowed;
             }
+            .keywords-table-highlight {
+        animation: highlight 1.5s ease-in-out;
+            }
+
+            @keyframes highlight {
+            0% 
+                                  {
+        background-color: #e6f0ff; 
+            }
+        100% {
+        background-color: white; /* Couleur finale (blanc) */
+            }
+        }
         </style>
     </head>
     <body>
@@ -2949,6 +2962,11 @@
                             downloadBtn.style.display = 'none'; 
                             downloadBtn.disabled = true; 
                         }
+                        keywordsTable.scrollIntoView({ behavior: 'smooth' });
+                        keywordsTable.classList.add('keywords-table-highlight');
+                        setTimeout(() => {
+                            keywordsTable.classList.remove('keywords-table-highlight');
+                        }, 1500);
                     } catch (error) {
                         console.error("Erreur lors du parsing JSON : ", error);
                     }
